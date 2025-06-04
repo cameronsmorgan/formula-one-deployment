@@ -1,0 +1,86 @@
+.calendar-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #111;
+  border: 2px solid #222;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.calendar-column h3 {
+  color: var(--theme-color);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* REACT-CALENDAR OVERRIDES */
+.calendar-column .react-calendar {
+  background-color: #514f4f !important;
+  color: white !important;
+  border: none !important;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.react-calendar__navigation button {
+  background: none !important;
+  color: var(--theme-color) !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none !important;
+}
+
+.react-calendar__tile {
+  padding: 15px 10px !important;
+  font-size: 1rem;
+  background-color: #222 !important;
+  border-radius: 8px;
+  margin: 3px;
+  transition: 0.2s ease-in-out;
+  color: white !important;
+}
+
+.react-calendar__tile--now {
+  background: #333 !important;
+  border: 1px solid var(--theme-color) !important;
+  color: white !important;
+}
+
+.react-calendar__tile--active {
+  background: var(--theme-color) !important;
+  color: white !important;
+}
+
+.react-calendar__tile:hover {
+  background-color: #444 !important;
+}
+
+/* Highlight race days */
+.react-calendar__tile.race-day {
+  background-color: var(--theme-color) !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.react-calendar__tile.race-day:hover {
+  background-color: var(--theme-color) !important;
+}
+
+@media (max-width: 900px) {
+  .calendar-column {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-column h3 {
+    font-size: 1.2rem;
+  }
+
+  .react-calendar__tile {
+    font-size: 0.9rem;
+    padding: 10px 6px;
+  }
+}

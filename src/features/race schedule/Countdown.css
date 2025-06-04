@@ -1,0 +1,92 @@
+.race-countdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+  font-family: 'Arial', sans-serif;
+  flex-wrap: wrap;
+  background-color: #111;
+  border: 2px solid var(--theme-color);
+  border-radius: 10px;
+  color: white;
+}
+
+.race-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.race-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--theme-color);
+  margin-bottom: 0.5rem;
+}
+
+.race-date-time .race-date,
+.race-date-time .race-time {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-box {
+  background-color: #222;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 100px;
+  border: 1px solid var(--theme-color);
+}
+
+.countdown-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--theme-color);
+}
+
+.countdown-label {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .race-countdown-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .race-name {
+    font-size: 1.5rem;
+  }
+
+  .race-date-time .race-date,
+  .race-date-time .race-time {
+    font-size: 1rem;
+  }
+
+  .countdown-box {
+    padding: 1rem;
+    min-width: 80px;
+  }
+
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+
+  .countdown-label {
+    font-size: 0.85rem;
+  }
+}

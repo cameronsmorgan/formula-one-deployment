@@ -1,0 +1,162 @@
+.home-container {
+  padding-top: 100px;
+  background: #0f0f0f;
+  color: white;
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+
+  animation: slideInDown 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 10px;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  background: #1a1a1a;
+  padding: 20px 30px;
+  color: var(--theme-color);
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: left;
+  box-shadow: 0 0 10px var(--theme-color);
+  transition: 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.my-favourites {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.my-favourites h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.favourites-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.driver-card,
+.constructor-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px var(--theme-color);
+  text-align: center;
+  width: 350px;
+}
+
+.driver-card img,
+.constructor-card img {
+  max-width: 100%;
+  width: 90%;
+
+  height: auto;
+  border-radius: 8px;
+}
+
+.stats {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    max-width: 90%;
+    width: 100%;
+  }
+}
+
+/* Responsive "My Favourites" section */
+@media (max-width: 768px) {
+  .favourites-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .driver-card,
+  .constructor-card {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .feature-box {
+    padding: 15px 20px;
+  }
+
+  .stats {
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+}

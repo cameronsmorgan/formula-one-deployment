@@ -1,0 +1,269 @@
+.profile-page {
+  padding: 40px;
+}
+
+.profile-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  color: var(--theme-color);
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.toggle-btn {
+  flex: 1;
+  max-width: 200px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 25px;
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.toggle-btn.active {
+  background-color: var(--theme-color);
+  color: white;
+}
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.driver-list, .driver-card,
+.constructor-list, .constructor-card {
+  width: 100%;
+  max-width: 500px;
+
+  height: auto;
+  background: #1a1a1a; /* Dark background */
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px var(--theme-color);
+  color: white;
+}
+
+/* === List Headers === */
+.driver-list h2,
+.constructor-list h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--theme-color);
+  padding-bottom: 8px;
+  color: white;
+}
+
+/* === Lists === */
+.driver-list ul,
+.constructor-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.driver-list li,
+.constructor-list li {
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 5px;
+}
+
+.driver-list li:hover,
+.constructor-list li:hover {
+  background: rgba(139, 139, 141, 0.1);
+  color: var(--theme-color);
+}
+
+.driver-list li.selected,
+.constructor-list li.selected {
+  font-weight: bold;
+  color: var(--theme-color);
+  text-decoration: underline;
+}
+
+/* === Scrollbars === */
+.driver-list ul::-webkit-scrollbar,
+.constructor-list ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.driver-list ul::-webkit-scrollbar-thumb,
+.constructor-list ul::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
+}
+
+.driver-list ul::-webkit-scrollbar-track,
+.constructor-list ul::-webkit-scrollbar-track {
+  background-color: #222;
+}
+
+/* === Cards === */
+.driver-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 30px 20px;
+  background: none; /* remove any background if previously applied */
+}
+
+/* === Driver Image Styling (simple, clean) === */
+.driver-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* === Constructor Image Styling (larger and no box/border) === */
+.constructor-card {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 30px 20px;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* === Constructor Car Image (uniform size and alignment) === */
+.constructor-card img {
+  width: 100%;
+  max-width: 350px;
+  height: 180px;
+  object-fit: contain;      /* Preserve aspect ratio */
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* === Text Styling === */
+.driver-card p,
+.constructor-card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* === Favourite Button === */
+.favourite-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+.favourite-btn:hover {
+  color: gold;
+}
+
+.driver-card:hover,
+.constructor-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.2s;
+}
+
+@media (max-width: 1024px) {
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .driver-list, .constructor-list,
+  .driver-card, .constructor-card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-heading {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  .toggle-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toggle-btn {
+    width: 90%;
+    max-width: none;
+    font-size: 14px;
+  }
+
+  .driver-card img,
+  .constructor-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .stats div {
+    width: 45%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-heading {
+    font-size: 1.5rem;
+  }
+
+  .toggle-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .driver-list li,
+  .constructor-list li {
+    font-size: 0.9rem;
+  }
+
+  .stats div {
+    width: 100%;
+  }
+}

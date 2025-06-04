@@ -1,0 +1,143 @@
+.predictions-container {
+  padding: 80px 15px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: white;
+}
+
+.predictions-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--theme-color);
+}
+
+.toggle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  flex: 1 1 auto;
+  max-width: 150px;
+}
+
+.toggle-btn.active {
+  background-color: var(--theme-color);
+}
+
+.dropdown-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.predictions-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  min-width: 150px;
+  max-width: 250px;
+}
+
+.dropdown-group label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--theme-color);
+}
+
+select {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #222;
+  color: white;
+  border: 2px solid #444;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+select.correct {
+  border-color: green;
+  background-color: green;
+}
+
+select.incorrect {
+  border-color: red;
+  background-color: red;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .predictions-heading {
+    font-size: 2rem;
+  }
+
+  .toggle-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .dropdown-group {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .predictions-heading {
+    font-size: 1.75rem;
+  }
+
+  .predictions-form {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .toggle-container {
+    flex-direction: column;
+  }
+
+  .toggle-btn {
+    width: 100%;
+  }
+}

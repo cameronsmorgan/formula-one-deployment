@@ -1,0 +1,20 @@
+.app-footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 2px solid var(--theme-color);
+  margin-top: 60px;
+  animation: fadeIn 2s ease-in;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer-content p:first-child {
+  font-weight: bold;
+  color: var(--theme-color);
+}
