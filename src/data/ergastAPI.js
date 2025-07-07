@@ -9,12 +9,18 @@ export const fetchRaceSchedule = async (season) => {
   try {
     const response = await fetch(`${BASE_FUNCTION_URL}/getRaceSchedule?season=${season}`);
     const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("Schedule data is not an array");
+    }
+
     return data;
   } catch (error) {
     console.error(`Error fetching race schedule for ${season}:`, error);
     return [];
   }
 };
+
 
 /*
  * fetches race results for a specific race in a season.
@@ -26,6 +32,11 @@ export const fetchRaceResults = async (season, round) => {
   try {
     const response = await fetch(`${BASE_FUNCTION_URL}/getRaceResults?season=${season}&round=${round}`);
     const data = await response.json();
+
+    if (!data || !data.Results) {
+      throw new Error("Invalid race data");
+    }
+
     return data;
   } catch (error) {
     console.error(`Error fetching race results for ${season} round ${round}:`, error);

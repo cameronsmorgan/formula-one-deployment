@@ -1,14 +1,22 @@
 export async function handler(event) {
-  const season = event.queryStringParameters.season;
-  const round = event.queryStringParameters.round;
+  const { season, round } = event.queryStringParameters;
+
+  if (!season || !round) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Missing season or round parameter' }),
+    };
+  }
 
   try {
     const response = await fetch(`https://ergast.com/api/f1/${season}/${round}/results.json`);
     const data = await response.json();
 
+    const race = data?.MRData?.RaceTable?.Races?.[0];
+
     return {
       statusCode: 200,
-      body: JSON.stringify(data.MRData.RaceTable.Races[0]),
+      body: JSON.stringify(race || null),
     };
   } catch (error) {
     return {

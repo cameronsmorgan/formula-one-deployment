@@ -10,11 +10,12 @@ function RaceSelector({ races, onSelect }) {
         
       >
         <option value="">-- Choose a race --</option>
-        {races.map((race) => (
-          <option key={race.round} value={race.round}>
-            {race.raceName} - {race.Circuit.circuitName}
-          </option>
-        ))}
+       {Array.isArray(races) && races.map((race) => (
+  <option key={race.round} value={race.round}>
+    {race.raceName} - {race.Circuit.circuitName}
+  </option>
+))}
+
       </select>
     </section>
   );
