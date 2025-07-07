@@ -9,7 +9,8 @@ export const fetchRaceSchedule = async (season) => {
   try {
     const response = await fetch(`${BASE_URL}/${season}.json`);
     const data = await response.json();
-    return data.MRData.RaceTable.Races;
+    console.log('Direct fetch schedule:', data.MRData?.RaceTable?.Races);
+    return data.MRData?.RaceTable?.Races || [];
   } catch (error) {
     console.error(`Error fetching race schedule for ${season}:`, error);
     return [];
