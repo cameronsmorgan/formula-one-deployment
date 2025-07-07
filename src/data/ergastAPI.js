@@ -1,4 +1,4 @@
-const BASE_FUNCTION_URL = '/.netlify/functions';
+const BASE_URL = 'https://ergast.com/api/f1';
 
 /*
  * fetches the race schedule for a given season.
@@ -7,14 +7,9 @@ const BASE_FUNCTION_URL = '/.netlify/functions';
  */
 export const fetchRaceSchedule = async (season) => {
   try {
-    const response = await fetch(`${BASE_FUNCTION_URL}/getRaceSchedule?season=${season}`);
+    const response = await fetch(`${BASE_URL}/${season}.json`);
     const data = await response.json();
-
-    if (!Array.isArray(data)) {
-      throw new Error("Schedule data is not an array");
-    }
-
-    return data;
+    return data.MRData.RaceTable.Races;
   } catch (error) {
     console.error(`Error fetching race schedule for ${season}:`, error);
     return [];
@@ -30,14 +25,9 @@ export const fetchRaceSchedule = async (season) => {
  */
 export const fetchRaceResults = async (season, round) => {
   try {
-    const response = await fetch(`${BASE_FUNCTION_URL}/getRaceResults?season=${season}&round=${round}`);
+    const response = await fetch(`${BASE_URL}/${season}/${round}/results.json`);
     const data = await response.json();
-
-    if (!data || !data.Results) {
-      throw new Error("Invalid race data");
-    }
-
-    return data;
+    return data.MRData.RaceTable.Races[0];
   } catch (error) {
     console.error(`Error fetching race results for ${season} round ${round}:`, error);
     return null;
